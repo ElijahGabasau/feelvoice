@@ -1,0 +1,117 @@
+.data-section {
+  display: grid;
+  row-gap: 5rem;
+  width: 97%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.data-heading {
+  cursor: pointer;
+  padding: 1rem 3rem;
+  background-color: $color-grey-dark-3;
+}
+
+.data-container {
+  display: grid;
+  row-gap: 5rem;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  transition: 1s ease-in-out;
+
+  &--collapsed {
+    height: 0;
+
+    .data {
+      height: 0;
+      display: none;
+      position: hidden;
+    }
+  }
+}
+
+.data-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.data-admin {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  background-color: $color-grey-dark-3;
+  padding: 3rem 1rem;
+}
+
+.data {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: 
+  "image content"
+  "buttons buttons";
+  justify-items: center;
+  background-color: $color-grey-dark-3;
+  padding: 3rem 1rem;
+
+  &__btn {
+    padding: .5rem 1rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    margin: 1rem;
+  }
+
+  &__image-box{
+    grid-area: image / image;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    justify-items: center;
+  }
+
+  &__image {
+    max-width: 20rem;
+    max-height: 30rem;
+    object-fit: cover;
+  }
+  
+  &__content {
+    grid-area: content / content;
+    width: 100%;
+    max-width: 45vw;
+    display: flex;
+    flex-direction: column;
+
+    *:not(:last-child){
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 13rem 1fr;
+    align-items: center;
+  }
+
+  &__textarea {
+    min-height: 10rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1rem;
+
+    &--file {
+      max-width: 20rem;
+    }
+  }
+
+  &__button-bar {
+    grid-area: buttons / buttons;
+  }
+}

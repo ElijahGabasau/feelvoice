@@ -1,0 +1,177 @@
+.modal {
+  height: 62rem;
+  max-width: 67rem;
+  width: 90%;
+  padding: 3rem 2rem;
+  margin: 10vh auto;
+  position: relative;
+  z-index: -10;
+
+  display: grid;
+
+  &--thanks{
+    background-color: $color-tertiary;
+    justify-items: center;
+    grid-template-rows: 4rem max-content 2rem repeat(2, min-content);
+    grid-template-areas: 
+      "."
+      "img"
+      "."
+      "heading"
+      "text";
+      row-gap: 3rem;
+  }
+
+  &--form{
+    background-color: $color-secondary;
+    grid-template-areas: 
+      "."
+      "heading"
+      "form";
+    justify-items: center;
+    align-content: start;
+    row-gap: 2rem;
+
+    @include respond(tab-land) {
+      padding: 4rem;
+      grid-template-areas: 
+      "."
+      "heading"
+      "."
+      "form";
+    }
+  }
+
+  &__image {
+    grid-area: img/img;
+    width: 20rem;
+  }
+
+  &__figure {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+
+    right: 5%;
+    top: 3.5%;
+    
+    @include respond(tab-land) {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+    grid-area: heading / heading;
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+  }
+
+  &__text {
+    grid-area: text / text;
+    text-align: center;
+    font-size: 1.4rem;
+    max-width: 34rem;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+  }
+
+  &__form {
+    grid-area: form / form;
+    width: 100%;
+    max-width: 35rem;
+    display: grid;
+    justify-content: stretch;
+    align-content: center;
+
+    row-gap: 2rem;
+
+    @include respond(desktop) {
+      max-width: 52rem;
+      grid-template-areas: 
+        "piece-1 piece-2"
+        "piece-3 piece-3"
+        "piece-4 piece-4"
+        ". ."
+        "btn btn";
+      column-gap: 2rem;
+    }
+  }
+
+  &__form-piece {
+    * {
+      display: block;
+      width: 100%;
+    }
+
+    @include respond(desktop) {
+      &--1 {
+        grid-area: piece-1 / piece-1;
+      }
+
+      &--2 {
+        grid-area: piece-2 / piece-2;
+      }
+
+      &--3 {
+        grid-area: piece-3 / piece-3;
+      }
+
+      &--4 {
+        grid-area: piece-4 / piece-4;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem; 
+
+    @include respond(desktop) {
+      font-size: 2rem;
+    }
+  }
+
+  &__input {
+    font-family: inherit;
+    color: $color-grey-dark-3;
+    font-size: 1.6rem;
+
+    height: 3.6rem;
+    padding: 1rem 2rem;
+    border: none;
+    
+    box-shadow: inset 1px 2px 3px 1px rgba($color-black, 0.2);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+
+    @include respond(desktop) {
+      height: 5rem;
+    }
+  }
+
+  &__btn {
+    grid-area: btn / btn;
+
+    justify-self: center;
+  }
+}

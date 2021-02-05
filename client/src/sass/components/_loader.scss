@@ -1,0 +1,54 @@
+.loader {
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-primary-light;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__heading {
+    color: $color-black;
+    font-size: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include respond(tab-land) {
+      font-size: 14rem;
+
+      flex-direction: row;
+    }
+
+    &--part{
+      display: block;
+    }
+  }
+
+  &__container {
+    margin: 5rem 0;
+    background-color: $color-primary;
+    min-width: 20rem;
+    max-width: 48rem;
+    width: 40%;
+    height: 1.2rem;
+    border: 1px solid $color-black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__stripe {
+    width: 75%;
+    height: inherit;
+    background: $color-white;
+
+    animation: 3.5s ease-in-out infinite loader backwards;
+  }
+}

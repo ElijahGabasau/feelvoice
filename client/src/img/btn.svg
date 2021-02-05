@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="btn-1" viewBox="0 0 252 63" fill="none" preserveAspectRatio="none">
+    <path d="M26.3099 8V6H194.957V1H214.843V4H219.492H236.795V6H248.676V8" stroke="#1D2688"/>
+    <path d="M2.54959 58.5V45.5H1V22.5H2.54959V6.5H17.5289V8.5" stroke="#1D2688"/>
+    <path d="M197.797 59H212.777V62H232.405V59H235.246H251V35H249.967V14.5H248.676" stroke="#1D2688"/>
+    <path d="M23.7273 59H82.3533V62H102.756V59H121.868H127.808V57" stroke="#1D2688"/>
+    <rect x="3.3244" y="8" width="245.868" height="50" fill="#1D2688"/>
+  </symbol>
+
+  <svg id="btn-2" viewBox="0 0 252 63" fill="none" preserveAspectRatio="none">
+    <path d="M26.3086 8V6H194.955V1H214.842V4H219.49H236.794V6H248.674V8" stroke="#f7f7f7"/>
+    <path d="M2.54959 58.5V45.5H1V22.5H2.54959V6.5H17.5289V8.5" stroke="#f7f7f7"/>
+    <path d="M197.797 59H212.776V62H232.404V59H235.245H250.999V35H249.966V14.5H248.675" stroke="#f7f7f7"/>
+    <path d="M23.7266 59H82.3526V62H102.755V59H121.867H127.807V57" stroke="#f7f7f7"/>
+    <rect x="3.32422" y="8" width="245.868" height="50" fill="#f7f7f7"/>
+  </svg>
+
+
+  <symbol id="btn-3" viewBox="0 0 252 63" fill="none" preserveAspectRatio="none">
+    <path d="M26.3099 8V6H194.957V1H214.843V4H219.492H236.795V6H248.676V8" stroke="#D73B30"/>
+    <path d="M2.54959 58.5V45.5H1V22.5H2.54959V6.5H17.5289V8.5" stroke="#D73B30"/>
+    <path d="M197.797 59H212.777V62H232.405V59H235.246H251V35H249.967V14.5H248.676" stroke="#D73B30"/>
+    <path d="M23.7273 59H82.3533V62H102.756V59H121.868H127.808V57" stroke="#D73B30"/>
+    <rect x="3.3244" y="8" width="245.868" height="50" fill="#D73B30"/>
+  </symbol>
+
+  <symbol id="btn-4" viewBox="0 0 486 63" fill="none" preserveAspectRatio="none">
+    <path d="M50 8V6H214V3H281V1H323.5V3V6H376.5V1H415V4H424H457.5V6H480.5V8" stroke="#CF4F46"/>
+    <path d="M4 58.5V45.5H1V22.5H4V6.5H33V8.5" stroke="#CF4F46"/>
+    <path d="M382 59H411V62H449V59H454.5H485V35H483V14.5H480.5" stroke="#CF4F46"/>
+    <path d="M45 59H158.5V62H198V59H235H246.5V57" stroke="#CF4F46"/>
+    <g clip-path="url(#clip0)">
+      <path d="M33 8H50" stroke="#CF4F46"/>
+      <path d="M480.5 6.5V14.5" stroke="#CF4F46"/>
+    </g>
+    <path d="M246 57H287.5H323.5V60.5H373V57H381.5V59" stroke="#CF4F46"/>
+  </symbol>
+
+</svg>

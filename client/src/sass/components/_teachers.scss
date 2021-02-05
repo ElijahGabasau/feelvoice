@@ -1,0 +1,367 @@
+.teachers {
+    display: grid;
+    justify-items: center;
+    row-gap: 10rem;
+}
+
+.teacher {
+    padding: 0 2rem;
+
+    display: grid;
+    grid-template-areas:
+        "image"
+        "title"
+        "text-1"
+        "text-2";
+    justify-items: center;
+    row-gap: 2rem;
+
+    @include respond(tab-port) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: min-content;
+
+        &:nth-child(even){
+            grid-template-areas: 
+            "image title"
+            "image text-1"
+            "image text-2"
+            "image .";
+        }
+
+        &:nth-child(odd){
+            grid-template-areas: 
+            "title image"
+            "text-1 image"
+            "text-2 image"
+            ". image";
+        }
+
+    }
+
+    @include respond(tab-land) {
+        grid-template-columns: 1fr repeat(3, 30rem) 1fr;
+        grid-template-rows: 1rem;
+
+        &:nth-child(even) {
+            justify-items: end;
+            grid-template-areas:
+            ". image . . ."
+            ". image title title ."
+            ". image text-1 text-2 ."
+            ". image . . .";
+
+            .teacher {
+                &__name {
+                    padding-left: 2.5rem;
+                }
+            } 
+        }
+
+        &:nth-child(odd) {
+            justify-items: start;
+            grid-template-areas: 
+            ". . . image ."
+            ". title title image ."
+            ". text-1 text-2 image ."
+            ". . . image .";
+
+            .teacher {
+                &__spec {
+                    padding-right: 2.5rem;
+                }
+
+                &__text {
+                    &--1 {
+                        padding-left: 0;
+                    }
+                }
+            } 
+        }
+    }
+
+    @include respond(desktop) {
+        grid-template-columns: 1fr 35rem 30rem 35rem 1fr;
+        row-gap: 5rem;
+    }
+
+    &__image-container {
+        grid-area: image / image;
+
+        position: relative;
+    }
+
+    &__image {
+        height: 40rem;
+        width: 30rem;
+
+        object-fit: cover;
+
+        @include respond(desktop) {
+            height: 55rem;
+            width: 41rem;
+        }
+    }
+
+    &__figure {
+        position: absolute;
+        z-index: 10;
+
+
+        &--0 {
+            width: 17rem;
+            height: 17rem;
+
+            top: 0;
+            left: 0;
+
+            transform: translate(-7rem, 29rem);
+
+
+            @include respond(tab-land){
+                width: 30rem;
+                height: 30rem;
+
+                transform: translate(-7rem, 24rem);
+            }
+
+            @include respond(desktop){
+                width: 40rem;
+                height: 40rem;
+
+                transform: translate(-13rem, 33rem);
+            }
+        }
+
+        &--1 {
+            width: 13rem;
+            height: 13rem;
+
+            top: 0;
+            right: 0;
+
+            transform: translate(2rem, 30rem);
+
+
+            @include respond(tab-land){
+                width: 18rem;
+                height: 18rem;
+
+                transform: translate(8rem, 33rem);
+            }
+
+            @include respond(desktop){
+                width: 23rem;
+                height: 23rem;
+
+                transform: translate(10.5rem, 44rem);
+            }
+        }
+
+        &--2 {
+            width: 13rem;
+            height: 10rem;
+
+            top: 0;
+            left: 0;
+
+            transform: translate(-5rem, 31rem);
+
+
+            @include respond(tab-land){
+                width: 20rem;
+                height: 14rem;
+
+                transform: translate(-5rem, 32rem);
+            }
+
+            @include respond(desktop){
+                width: 31rem;
+                height: 21rem;
+
+                transform: translate(-10rem, 44rem);
+            }
+        }
+
+        &--3 {
+            width: 13rem;
+            height: 9rem;
+
+            top: 0;
+            right: 0;
+
+            transform: translate(1.5rem, 33rem);
+
+
+            @include respond(tab-land){
+                width: 21rem;
+                height: 14rem;
+
+                transform: translate(6rem, 30rem);
+            }
+
+            @include respond(desktop){
+                width: 30rem;
+                height: 19rem;
+
+                transform: translate(11rem, 44rem);
+            }
+        }
+
+        &--4 {
+            width: 9rem;
+            height: 9rem;
+
+            top: 0;
+            right: 0;
+
+            transform: translate(2.5rem, 33.5rem);
+
+
+            @include respond(tab-land){
+                width: 16rem;
+                height: 16rem;
+
+                transform: translate(8rem, 31rem);
+            }
+
+            @include respond(desktop){
+                width: 21rem;
+                height: 21rem;
+
+                transform: translate(11rem, 43rem);
+            }
+        }
+
+        &--5 {
+            width: 12rem;
+            height: 9rem;
+
+            top: 0;
+            left: 0;
+
+            transform: translate(-4rem, 33.5rem);
+
+
+            @include respond(tab-land){
+                width: 15rem;
+                height: 14rem;
+
+                transform: translate(-7rem, 33rem);
+            }
+
+            @include respond(desktop){
+                width: 23rem;
+                height: 18rem;
+
+                transform: translate(-7rem, 46rem);
+            }
+        }
+
+        &--6 {
+            width: 13rem;
+            height: 9rem;
+
+            top: 0;
+            right: 0;
+
+            transform: translate(3.5rem, 33rem);
+
+
+            @include respond(tab-land){
+                width: 21rem;
+                height: 14rem;
+
+                transform: translate(5.5rem, 33rem);
+            }
+
+            @include respond(desktop){
+                width: 30rem;
+                height: 19rem;
+
+                transform: translate(17rem, 42rem);
+            }
+        }
+
+        &--7 {
+            width: 12rem;
+            height: 9rem;
+
+            top: 0;
+            left: -2rem;
+
+            transform: translate(0, 34.5rem);
+
+
+            @include respond(tab-land){
+                width: 15rem;
+                height: 14rem;
+
+                transform: translate(-7rem, 31rem);
+            }
+
+            @include respond(desktop){
+                width: 20rem;
+                height: 18rem;
+
+                transform: translate(-7rem, 44rem);
+            }
+        }
+    }
+
+    &__title {
+        grid-area: title / title;
+
+        width: 100%;
+        max-height: 6rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+            justify-content: start;
+        }
+
+        @include respond(tab-land) {
+            flex-direction: row;
+            justify-content: space-between;
+            max-height: 3.5rem;
+        }
+
+        &:after {
+            content: "";
+            width: 100%;
+
+            border-bottom: 2px solid $color-grey-light-1;
+        }
+    
+
+        * {
+            font-size: 1.4rem;
+            font-weight: 300;
+            text-transform: uppercase;
+
+            @include respond(tab-land) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__text {
+        max-width: 50rem;
+
+        @include respond(tab-land) {
+            max-width: 30rem;
+            padding: 0 2.5rem;
+        }
+
+        &--1 {
+            grid-area: text-1 / text-1;
+        }
+
+        &--2 {
+            grid-area: text-2 / text-2;
+        }
+    }
+}

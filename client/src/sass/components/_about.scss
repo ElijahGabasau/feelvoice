@@ -1,0 +1,217 @@
+.about {
+  display: grid;
+  justify-items: center;
+  position: relative;
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr repeat(3, minmax(20rem, max-content)) 1fr;
+    grid-template-areas:
+      ". . heading heading ."
+      ". . text text .";
+    justify-items: end;
+  }
+
+  @media only screen and (min-width: 50em) {
+    grid-template-columns: 4rem repeat(2, 1fr) 4rem;
+    grid-template-areas:
+      ". . heading ."
+      ". . text .";
+    justify-items: start;
+  }
+
+  &__heading {
+    position: relative;
+
+    @include respond(tab-port) {
+      grid-area: heading / heading;
+      transform: translateX(-9rem);
+    }
+    
+    @media only screen and (min-width: 50em) {
+      transform: translateX(21rem);
+    }
+
+    @media only screen and (min-width: 87.5em) {
+      transform: translateX(31rem);
+    }
+  }
+
+  &__triangle {
+    position: absolute;
+    left: -20rem;
+
+    width: 56rem;
+    height: 62rem;
+
+    transform: translateY(-41%);
+    z-index: 10;
+
+    @include respond(tab-port) {
+      width: 35rem;
+      height: 37rem;
+    }
+  }
+
+  &__accent {
+    font-size: 6rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba($color-white, .2);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translate(-15.5rem, -20.5rem);
+
+    @include respond(tab-port) {
+      top: 50%;
+      transform: translate(-38rem, -11.5rem);
+      z-index: -1;
+    }
+
+    @include respond(tab-land) {
+      transform: translate(-50rem, 1rem);
+
+      &--animate {
+        animation: 3.5s ease-in-out move-back-object-left backwards;
+        animation-delay: .2s; 
+      }
+    }
+
+    @media only screen and (min-width: 87.5em) {
+      font-size: 10rem;
+      transform: translate(-80rem, 7rem);
+    }
+  }
+
+  &__heading-text {
+    position: relative;
+    z-index: 100;
+
+    // @include respond(tab-land){
+    //   &--animate {
+    //     animation: 2s ease-in-out move-back-object-right backwards; 
+    //     animation-delay: 2s; 
+    //   }
+    // }
+  }
+
+  &__hero {
+    position: relative;
+    z-index: 1;
+
+    @include respond(tab-port) {
+      position: absolute;
+      top: -30rem;
+      left: 50%;
+      z-index: -10;
+
+      transform: translateX(-40rem);
+    }
+
+    @include respond(tab-land){
+      transform: translateX(-69.7rem);
+      // &--animate {
+      //   animation: 2.5s ease-in-out move-margin-left; 
+      // }
+    }
+
+    @media only screen and (min-width: 87.5em) {
+      transform: translate(-95rem, 4rem);
+    }
+  }
+
+  &__image {
+    max-width: 38rem;
+    object-fit: cover;
+
+    @include respond(tab-port) {
+      max-width: 56rem;
+      min-height: 58rem;
+    }
+
+    @include respond(tab-land){
+      max-width: 85rem;
+      min-height: 71rem;
+    }
+
+    @media only screen and (min-width: 87.5em) {
+      max-width: 107rem;
+    }
+  }
+
+  &__content-box {
+    justify-self: stretch;
+
+    display: grid;
+    row-gap: 2.5rem;
+
+    padding: 26.5rem 3rem 8rem;
+    background-color: $color-tertiary;
+
+    transform: translateY(-24rem);
+
+    @include respond(tab-port) {
+      width: 47rem;
+      grid-area: text / text;
+      padding: 2rem;
+      grid-template-columns: minmax(min-content, max-content);
+      transform: none;
+      justify-self: inherit;
+    }
+
+    // @include respond(tab-land) {
+    //   &--animate {
+    //     animation: 2.5s ease-in-out move-margin-right; 
+    //   }
+    // }
+
+    @include respond(desktop) {
+      width: 60rem;
+    }
+
+    @media only screen and (min-width: 87.5em) {
+      width: 84rem;
+      padding: 5rem;
+      grid-template-columns: repeat(2, minmax(min-content, max-content));
+      grid-template-areas: 
+        "text-1 text-3"
+        "text-2 text-3"
+        "text-2 text-4";
+      column-gap: 3rem;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 100; 
+
+    // @include respond(tab-land) {
+    //   &--animate {
+    //     animation: 1.5s ease-in-out fade-in-up backwards; 
+    //   }
+    // }
+
+    @media only screen and (min-width: 87.5em) {
+      &--1 {
+        grid-area: text-1 / text-1;
+        // animation-delay: 2.8s;
+      }
+
+      &--2 {
+        grid-area: text-2 / text-2;
+        // animation-delay: 3.2s;
+      }
+
+      &--3 {
+        grid-area: text-3 / text-3;
+        // animation-delay: 3s;
+      }
+
+      &--4 {
+        grid-area: text-4 / text-4;
+        // animation-delay: 3.4s;
+      }
+    }
+  }
+}

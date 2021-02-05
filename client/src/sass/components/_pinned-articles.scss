@@ -1,0 +1,13 @@
+.pinned-articles {
+  display: grid;
+  row-gap: 8rem;
+  width: 90%;
+
+  @include respond(desktop) {
+    row-gap: 10rem;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    width: 120rem;
+    margin: 10rem auto 0;
+  }
+}

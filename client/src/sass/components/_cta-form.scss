@@ -1,0 +1,111 @@
+.cta-form {
+  display: grid;
+
+  justify-items: center;
+  align-items: center;
+
+  @include respond(tab-land) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10rem;
+    justify-items: start;
+  }
+
+  @include respond(desktop) {
+    column-gap: 20rem;
+  }
+
+  &__input {
+    font-size: 1.4rem;
+    font-family: inherit;
+    color: inherit;
+
+    border: none;
+    border-bottom: 1px solid $color-grey-dark-2;
+    padding-bottom: 1.3rem;
+    background: none;
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $color-grey-light-1;
+    }
+
+    &:focus:invalid, 
+    &:required {
+      color: $color-primary;
+      border-bottom: 1px solid $color-primary;
+    }
+
+    &--error {
+      border-bottom: 1px solid $color-primary;
+      color: $color-primary;
+    }
+  }
+
+  &__hero {
+    position: relative;
+    width: 25rem;
+    margin-bottom: 12rem;
+
+    @include respond(tab-land) {
+      justify-self: end;
+    }
+
+    @include respond(desktop) {
+      width: 40rem;
+    }
+  }
+
+  &__heading {
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
+
+    @include respond(desktop) {
+      font-size: 4rem;
+    }
+  }
+
+  &__arrows {
+    position: absolute;
+    width: 40rem;
+    height: 24rem;
+    top: -92%;
+    left: -26%;
+
+    @include respond(desktop) {
+      width: 70rem;
+      height: 46rem;
+
+      left: -32%;
+      top: -80%;
+    }
+  }
+
+  &__form {
+    display: grid;
+    row-gap: 3.2rem;
+    width: 32rem;
+
+    @include respond(tab-port) {
+      width: 42rem;
+    }
+
+    @include respond(desktop) {
+      width: 47rem;
+      row-gap: 4.5rem;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+
+    @include respond(tab-land){
+      width: 70%;
+    }
+  }
+}

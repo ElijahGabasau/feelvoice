@@ -1,0 +1,137 @@
+.u-margin-top-xhg {
+  margin-top: 23rem;
+
+  @include respond(tab-port) {
+    margin-top: 45rem;
+  }
+}
+
+.u-margin-top-hg {
+  margin-top: 20rem;
+
+  @include respond(desktop) {
+    margin-top: 36rem;
+  }
+}
+
+.u-margin-top-lg {
+  margin-top: 15rem;
+
+  @include respond(desktop) {
+    margin-top: 21rem;
+  }
+}
+
+.u-margin-top-md {
+  margin-top: 7rem;
+  @include respond(desktop) {
+    margin-top: 15rem;
+  }
+}
+
+.u-margin-top-md-2 {
+  margin-top: 10rem;
+  @include respond(desktop) {
+    margin-top: 15rem;
+  }
+}
+
+.u-margin-top-sm {
+  margin-top: 1rem;
+}
+
+.u-margin-bottom-sm {
+  margin-bottom: 1rem;
+}
+.u-margin-bottom-md {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-md-2 {
+  margin-bottom: 7rem;
+  @include respond(desktop) {
+    margin-bottom: 15rem;
+  }
+}
+
+.u-block {
+  display: block;
+}
+
+.u-bold {
+  font-weight: 500;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-flex {
+  display: flex;
+
+  &--space-between{
+    justify-content: space-between;
+  }
+}
+
+.u-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.u-noised-container {
+  position: relative;
+
+  &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../../img/noise.png);
+      z-index: 100;
+    }
+
+  &:before {
+    background-size: 30rem;
+    opacity: .12;
+    animation: .3s infinite noise-sm;
+  }
+
+  &:after {
+    background-size: 15rem;
+    opacity: .05;
+    animation: .5s infinite noise-sm;
+  }
+}
+
+.u-noised-image {
+  width: 100%;
+  display: block;
+
+  &--abs {
+    width: auto;
+  }
+}
+
+.u-hidden {
+  opacity: 0;
+}
+
+.u-collapsed {
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.u-hover {
+  position: relative;
+
+  img:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+  }
+
+}

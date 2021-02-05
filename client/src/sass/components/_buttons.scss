@@ -1,0 +1,92 @@
+.btn-back {
+  cursor: pointer;
+}
+
+.btn-cta {
+  &:link,
+  &:visited {
+    font-size: 1.6rem;
+    text-decoration: none;
+    text-align: center;
+    padding: 1.2rem;
+    transition: all .2s;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+  }
+  
+  &--light {
+    color: $color-grey-light-1;
+
+    &::after {
+      border-bottom: 1px solid $color-grey-light-1;
+    }
+  }
+
+  &--dark {
+    color: $color-grey-dark-3;
+
+    &::after {
+      border-bottom: 1px solid $color-grey-dark-3;
+    }
+  }
+}
+
+.btn-arrow {
+  &--down {
+    width: 8rem;
+    height: 4.8rem;
+  }
+}
+
+.btn {
+  position: relative;
+  min-width: 20rem;
+  height: 5rem;
+
+  @include respond(tab-land) {
+    min-width: 25rem;
+  }
+
+  &--dark {
+    .btn__btn {
+      color: $color-grey-dark-3;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__btn{
+    background: none;
+    border: none;
+    width: 100%;
+    height: inherit;
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: inherit;
+    cursor: pointer;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+
+    &--hover-dark {
+      &:hover {
+        color: $color-grey-dark-3;
+      }
+    }
+  }
+}

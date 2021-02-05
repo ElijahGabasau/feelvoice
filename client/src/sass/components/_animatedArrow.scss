@@ -1,0 +1,72 @@
+.animated-arrow {
+  margin-top: 16rem;
+  width: 100%;
+  height: 7.5rem;
+  position: relative;
+
+  @include respond(tab-port) {
+    margin-top: 7rem;
+  }
+
+  &__content {
+    position: absolute;
+    right: 14%;
+    height: 7.5rem;
+    width: 150rem;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    @media only screen and (min-width: 107em) {
+      right: none;
+      left: 0;
+    }
+  }
+
+  &__arrow {
+    height: 7.5rem;
+    width: 150rem;
+    position: absolute;
+    right: 0;
+    top: 1rem;
+  }
+
+  &__text {
+    font-size: 3rem;
+    font-weight: 200;
+    color: $color-grey-dark-6;
+    text-transform: uppercase;
+    width: 25rem;
+
+    display: grid;
+
+    &__line {
+      display: block;
+      position: relative;
+
+      &--1 {
+        &::after {
+          content: "свяжем вас";
+          color: $color-primary;
+          font-size: 2.6rem;
+          position: absolute;
+          left: 5%;
+          top: -3%;
+        }
+      }
+
+      &--2 {
+        justify-self: end;
+
+        &::after {
+          content: "с музыкой";
+          color: $color-primary;
+          font-size: 2.6rem;
+          position: absolute;
+          left: 5%;
+          top: -3%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.menu-header {
+  height: 15vh;
+  width: 100%;
+  max-width: 128rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 4rem 1fr 4rem;
+  grid-template-areas: ". heading .";
+  align-items: center;
+  position: relative;
+
+    @media only screen and (max-height: 39em) {
+      height: 10rem;
+    }
+
+  &__heading {
+    grid-area: heading / heading;
+  }
+
+  &__animation {
+    position: absolute;
+    right: -9rem;
+    top: 13.5rem;
+
+    transform: rotate(90deg);
+  }
+}

@@ -1,0 +1,245 @@
+.teacher-figures {
+  grid-template-columns: 2.4rem repeat(6, 1fr) 2.4rem;
+  grid-template-columns: 2.4rem repeat(6, 1fr) 2.4rem;display: grid;
+  grid-template-areas:
+      ". heading heading heading heading heading heading ."
+      ". btn btn btn btn btn btn ."
+      ". teacher-1 teacher-1 teacher-1 . . . ."
+      ". . teacher-2 teacher-2 teacher-2 teacher-2 teacher-2 ."
+      ". . teacher-3 teacher-3 . . . ."
+      ". . teacher-4 teacher-4 teacher-4 . . ."
+      ". teacher-5 teacher-5 teacher-5 teacher-5 . . ."
+      ". . . teacher-6 teacher-6 teacher-6 . ."
+      ". teahcer-7 teacher-7 teacher-7 teacher-7 . . .";
+  justify-items: center;
+  row-gap: 2rem;
+
+  @include respond(tab-port) {
+    grid-template-areas:
+      ". heading heading heading heading heading heading ."
+      ". teacher-1 teacher-1 . . teacher-6 teacher-6 ."
+      ". . . teacher-5 teacher-5 teacher-5 teacher-5 ."
+      ". teacher-2 teacher-2 teacher-2 teacher-2 teacher-2 . ."
+      ". teacher-4 teacher-4 . teacher-3 teacher-3 . ."
+      ". teacher-7 teacher-7 . teacher-3 teacher-3 . .";
+
+    &__cta {
+      position: hidden;
+      display: none;
+    }
+  }
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr repeat(9, 10rem) 1fr;
+    grid-template-areas:
+      ". heading heading heading    .         .         .      teacher-6 teacher-6 teacher-6 ."
+      ". heading heading heading teacher-1 teacher-1 teacher-1 teacher-6 teacher-6 teacher-6 ."
+      ". heading heading heading    .         .      teacher-5 teacher-5 teacher-5 teacher-5 ."
+      ". heading heading heading teacher-2 teacher-2 teacher-2 teacher-2 teacher-2   .       ."
+      ". btn     btn     teacher-4 teacher-4  .      teacher-3 teacher-3 teacher-3   .       ."
+      ".   .       .       .     teacher-7 teacher-7 teacher-3 teacher-3 teacher-3   .       .";
+  }
+
+  @include respond(desktop) {
+    grid-template-columns: 1fr repeat(9, 13.5rem) 1fr;
+
+    &__cta {
+      position: static;
+      display: block;
+      align-self: end;
+      transform: translateY(3rem);
+    }
+  }
+
+  &__cta {
+    grid-area: btn / btn;
+  }
+
+  &__title {
+    grid-area: heading / heading;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.1;
+
+    @include respond(tab-land) {
+      transform: translateX(20rem) rotate(-90deg);
+    }
+
+    @include respond(desktop) {
+      transform: translate(10rem, 5rem) rotate(-90deg);
+    }
+
+    &--1 {
+      font-size: 8rem;
+      color: $color-primary;
+      margin-right: 2.4rem;
+
+      @include respond(tab-land) {
+        font-size: 10rem;
+        margin-right: 9rem;
+      }
+
+      @include respond(desktop) {
+        font-size: 13rem;
+      }
+    }
+
+    &--2 {
+      font-size: 6rem; 
+      color: $color-secondary;
+      margin-left: 1.6rem;
+
+      @include respond(tab-land) {
+        font-size: 10rem;
+        margin-left: 9rem;
+      }
+
+      @include respond(desktop) {
+        font-size: 13rem;
+      }
+    }
+  }
+}
+
+.teacher-figure {
+  position: relative;
+
+  &--1 {
+    grid-area: teacher-1 / teacher-1;
+  }
+
+  &--2 {
+    grid-area: teacher-2 / teacher-2;
+  }
+
+  &--3 {
+    grid-area: teacher-3 / teacher-3;
+  }
+
+  &--4 {
+    grid-area: teacher-4 / teacher-4;
+  }
+
+  &--5 {
+    grid-area: teacher-5 / teacher-5;
+  }
+
+  &--6 {
+    grid-area: teacher-6 / teacher-6;
+
+    @include respond(tab-port){
+      transform: translateY(1rem);
+    }
+
+    @include respond(tab-land){
+      transform: translateY(-2rem);
+    }
+  }
+
+  &--7 {
+    grid-area: teacher-7 / teacher-7;
+  }
+
+  &__name {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      text-transform: capitalize;
+      text-align: center;
+      padding: 1.5rem;
+      display: inline-block;
+      color: $color-grey-light-1;
+      font-weight: 300;
+    }
+
+    &--1 {
+      left: 105%;
+      font-size: 3rem;
+    }
+
+    &--2 {
+      top: 60%;
+      left: 40%;
+      font-size: 4.7rem;
+    }
+
+    &--3 {
+      left: 57%;
+      font-size: 3.3rem;
+    }
+
+    &--4 {
+      left: 95%;
+      font-size: 4.4rem;
+    }
+
+    &--5 {
+      top: 47%;
+      left: 47%;
+      font-size: 3rem;
+    }
+
+    &--6 {
+      top: 52%;
+      left: 33%;
+      font-size: 4rem;
+    }
+
+    &--7 {
+      top: 32%;
+      left: 38%;
+      font-size: 3.2rem;
+    }
+  }
+
+  &__hero {
+    &--1 {
+      width: 12.5rem;
+    }
+
+    &--2 {
+      width: 32rem;
+
+      @include respond(tab-port) {
+        width: 40rem;
+        height: 20rem;
+      } 
+    }
+
+    &--3 {
+      width: 24rem;
+      height: 24rem;
+
+      @include respond(tab-port) {
+        width: 28rem;
+        height: 50rem;
+      } 
+    }
+
+    &--4 {
+      width: 18.5rem;
+    }
+
+    &--5 {
+      width: 23rem;
+
+      @include respond(tab-port) {
+        width: 28rem;
+        height: 17rem;
+      } 
+    }
+
+    &--6 {
+      width: 12rem;
+    }
+
+    &--7 {
+      width: 24rem;
+    }
+  }
+
+}

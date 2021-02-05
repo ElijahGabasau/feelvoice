@@ -1,0 +1,173 @@
+.main-news {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, max-content) minmax(1rem, 1fr);
+  grid-template-areas:
+  ". heading ."
+  ". news1 ."
+  ". news2 ."
+  " . btn .";
+  justify-items: center;
+  row-gap: 4rem;
+
+  @include respond(tab-port) {
+    grid-template-columns:  1fr repeat(2, minmax(min-content, max-content)) 1fr;
+    grid-template-areas: 
+      ". heading heading ."
+      ". news1 . ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+          ". . news2 ."
+      ". btn btn .";
+    column-gap: 2.4rem;
+    row-gap: 6rem;
+  }
+
+  @media only screen and (min-width: 50em) {
+    column-gap: 5rem; 
+  }
+
+  @include respond(desktop) {
+    column-gap: 3rem;
+    grid-template-areas: 
+      ". . heading ."
+      ". news1 heading ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+      ". news1 news2 ."
+          ". . news2 ."
+      ". btn btn .";
+  }
+
+  &__heading {
+    grid-area: heading / heading;
+    font-size: 3.2rem;
+    color: $color-tertiary;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    transform: translateX(1.6rem);
+
+
+    &:after {
+      content: "Новости Студии";
+      color: $color-secondary;
+      position: absolute;
+      top: .7rem;
+      left: -3.2rem;
+
+      display: block;
+    }
+
+    @include respond(tab-port) {
+      justify-self: end;
+    }
+
+    @include respond(desktop) {
+      justify-self: start;
+      transform: translateX(8rem);
+      font-size: 4rem;
+    }
+  }
+
+  &__btn {
+    grid-area: btn / btn;
+  }
+}
+
+.main-news-piece {
+  max-width: 32rem;
+
+  @include respond(tab-port) {
+    max-width: 28rem;
+  }
+
+  @media only screen and (min-width: 44em) {
+    max-width: 32rem;
+  }
+
+  @include respond(desktop) {
+    max-width: 55.5rem;
+  }
+
+  &--1 {
+    grid-area: news1 / news1;
+  }
+
+  &--2 {
+    grid-area: news2 / news2;
+  }
+
+  &__hero {
+    position: relative;
+    padding: 4.5rem;
+    min-height: 30rem;
+
+    @include respond(desktop) {
+      min-height: 37rem;
+    }
+
+    &--1 {
+      background-color: $color-tertiary;
+    }
+
+    &--2 {
+      background-color: $color-grey-light-1;
+    }
+  }
+
+  &__figure {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    &--1 {
+      height: 20rem;
+
+      @include respond(desktop) {
+        min-height: 30rem;
+      }
+    }
+
+    &--2 {
+      height: 24rem;
+
+      @include respond(desktop) {
+        min-height: 34rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 3rem;
+    display: grid;
+    row-gap: 2rem;
+
+    @include respond(desktop) {
+      row-gap: 2.5rem;
+      padding: 5rem;
+    }
+
+    &--1 {
+      background-color: $color-secondary;
+    }
+
+    &--2 {
+      background-color: $color-primary;
+    }
+
+    a {
+      justify-self: end;
+    }
+  }
+}

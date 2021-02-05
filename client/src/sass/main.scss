@@ -1,0 +1,42 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+
+@import "layout/container";
+@import "layout/footer";
+@import "layout/navigation";
+@import "layout/stripes";
+@import "layout/modal";
+
+@import "components/data";
+@import "components/not-found";
+@import "components/form-link";
+@import "components/arrow-title";
+@import "components/animatedArrow";
+@import "components/loader";
+@import "components/tickets";
+@import "components/main-header";
+@import "components/menu-header";
+@import "components/prising-header";
+@import "components/greet";
+@import "components/about";
+@import "components/subject-thumbnails";
+@import "components/subjects";
+@import "components/animated-elements";
+@import "components/prising-cta";
+@import "components/cta-form";
+@import "components/main-news";
+@import "components/main-prising";
+@import "components/teachers";
+@import "components/teacher-figures";
+@import "components/buttons";
+@import "components/articles";
+@import "components/pinned-articles";
+@import "components/arrow-paragraph";
+@import "components/room";

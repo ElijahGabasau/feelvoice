@@ -1,0 +1,30 @@
+.not-found {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    margin-left: 2rem;
+    width: 80%;
+    max-width: 100rem;
+
+    @include respond(tab-port) {
+      margin-left: 4rem;
+    }
+
+    @include respond(tab-land) {
+      margin-left: 6rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 8rem;
+    width: 30rem;
+
+    @include respond(tab-land) {
+      width: 50rem;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.running-text {
+  display: flex;
+  justify-content: center;
+
+  &__star {
+    width: 3rem;
+    height: 3rem;
+
+    animation: 5s linear infinite rotate;
+  }
+
+  &__container {
+    overflow: hidden;
+    width: 26.5rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    padding-left: .5rem;
+
+    animation: 10s linear infinite running-text;
+  }
+}
+
+.rotating-text {
+  position: relative;
+  z-index: 10;
+  height: inherit;
+  width: inherit;
+  cursor: pointer;
+  
+  &__figure {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    
+    &--1 {
+      top: 50%;
+      left: 50%;
+
+      margin-top: -1.75rem;
+      margin-left: -1.75rem;
+
+      width: 3.5rem; 
+      height: 3.5rem;
+      animation: 20s linear infinite rotate;
+    
+      @include respond(tab-land) {
+        margin-top: -2.25rem;
+        margin-left: -2.25rem;
+
+        width: 4.5rem; 
+        height: 4.5rem;
+      }
+    }
+
+    &--2 {
+      top: 5%;
+      left: 5%;
+
+      width: 90%; 
+      height: 90%;
+      animation: 32s linear infinite rotate-backwards;
+    }
+
+    &--3 {
+      animation: 40s linear infinite rotate;
+    }
+  }
+}
+
+.tariff {
+  position: relative;
+  width: inherit;
+  height: inherit;
+
+  &__star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+
+    width: 20%;
+    height: 20%;
+
+    margin-top: -10%;
+    margin-left: -10%;
+
+    animation: 20s linear infinite rotate-backwards;
+  }
+
+  &__text {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+
+    width: inherit;
+    height: inherit;
+
+    animation: 30s linear infinite rotate;
+  }
+}

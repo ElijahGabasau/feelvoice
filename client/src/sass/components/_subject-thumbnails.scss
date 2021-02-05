@@ -1,0 +1,226 @@
+.subject-thumbnails {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr 2.4rem;
+  grid-template-areas: 
+    ". heading ."
+    ". subject-1 ."
+    ". subject-2 ."
+    ". subject-3 ."
+    ". subject-4 ."
+    ". subject-5 ."
+    ". subject-6 .";
+  row-gap: 4rem;
+
+  justify-items: center;
+
+  @include respond(tab-port) {
+    grid-row: auto;
+    grid-template-columns: 1rem repeat(2, 1fr) 1rem;
+    grid-template-areas: 
+      ". heading heading ."
+      ". subject-1 . ."
+      ". subject-1 subject-2 ."
+      ". subject-1 subject-2 ."
+      ". subject-1 subject-2 ."
+            ". . subject-2 ."
+      ". subject-3 . ."
+      ". subject-3 subject-4 ."
+      ". subject-3 subject-4 ."
+      ". subject-3 subject-4 ."
+            ". . subject-4 ."
+      ". subject-5 . ."
+      ". subject-5 subject-6 ."
+      ". subject-5 subject-6 ."
+      ". subject-5 subject-6 ."
+            ". . subject-6 ."
+          ". btn btn .";
+    row-gap: 3.5rem;
+    column-gap: 3rem;
+  }
+
+  @media only screen and (min-width: 42.5em) {
+    column-gap: 5rem; 
+  }
+
+  @include respond(tab-land) {
+    column-gap: 10rem;
+    row-gap: 6rem;
+  }
+
+  @include respond(desktop) {
+    grid-template-columns: 1fr repeat(3, 38rem) 1fr;
+    grid-template-areas: 
+      ". heading . . ."
+      ". . . . ."
+      ". . . . ."
+            ". . subject-2 . ."
+            ". . subject-2 . ."
+      ". subject-1 subject-2 . ."
+      ". subject-1 subject-2 . ."
+      ". subject-1 subject-2 subject-3 ."
+      ". subject-1    .    subject-3 ."
+      ". subject-1    .    subject-3 ."
+            ". . subject-5 subject-3 ."
+            ". . subject-5 subject-3 ."
+            ". . subject-5 . ."
+      ". subject-4 subject-5 . ."
+      ". subject-4 subject-5 subject-6 ."
+      ". subject-4    .    subject-6 ."
+      ". subject-4    .    subject-6 ."
+      ". subject-4    .    subject-6 ."
+                  ". . . subject-6 ."
+              ". . btn . .";
+    column-gap: 0;
+    row-gap: 4.5rem;
+  }
+
+  &__heading {
+    grid-area: heading / heading;
+  }
+
+  &__btn {
+    display: none;
+    position: hidden;
+
+    @include respond(tab-port) {
+      grid-area: btn / btn;
+      display: block;
+      position: static;
+    }
+  }
+
+  &__figure {
+    position: absolute;
+    z-index: -10;
+    top: -13%;
+    left: 50%;
+    width: 65rem;
+    height: 65rem;
+
+    transform: translateX(-58%); 
+
+    @include respond(tab-port) {
+      width: 80rem;
+      height: 80rem;
+
+      top: -25%;
+
+      transform: translateX(-49%);
+    }
+
+    @include respond(tab-land) {
+      width: 100rem;
+      height: 100rem;
+
+      top: 4%;
+
+      transform: translateX(-47%);
+    }
+
+    @include respond(desktop) {
+      width: 110rem;
+      height: 110rem;
+
+      top: -10%;
+      transform: translateX(-48%);
+    }
+  }
+}
+
+.subject-thumbnail {
+  position: relative;
+
+  &__image{
+    height: 30rem;
+    width: 30rem;
+
+    object-fit: cover;
+
+    @include respond(tab-port) {
+      height: 26rem;
+      width: 26rem;
+    }
+
+    @media only screen and (min-width: 46.75em){
+      height: 30rem;
+      width: 30rem;
+    }
+  }
+
+  &__figure {
+    position: absolute;
+
+    &--1 {
+      width: 22.5rem;
+      height: 12rem;
+
+      top: 45%;
+      left: -40%;
+    }
+
+    &--4 {
+      width: 12rem;
+      height: 2.2rem;
+
+      top: 10%;
+      left: -5%;
+    }
+
+    &--6 {
+      width: 14rem;
+      height: 7rem;
+
+      top: 5%;
+      right: -11%;
+    }
+  }
+
+  &__icon {
+    width: 3.75rem;
+    height: .5rem;
+
+    transition: transform .5s ease; 
+  }
+
+  &__btn {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+
+    &:hover .subject-thumbnail__icon {
+      transform: translateX(1rem);
+    }
+
+    &:active .subject-thumbnail__icon {
+      transform: translateX(-.5rem);
+    }
+  }
+
+  &--1 {
+    grid-area: subject-1 / subject-1;
+  }
+
+  &--2 {
+    grid-area: subject-2 / subject-2;
+  }
+
+  &--3 {
+    grid-area: subject-3 / subject-3;
+  }
+
+  &--4 {
+    grid-area: subject-4 / subject-4;
+  }
+
+  &--5 {
+    grid-area: subject-5 / subject-5;
+  }
+
+  &--6 {
+    grid-area: subject-6 / subject-6;
+  }
+}
