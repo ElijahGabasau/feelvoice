@@ -22,6 +22,7 @@ function Main(props) {
   useEffect(() => {
     props.fetchTeachers();
     props.fetchClasses();
+    props.fetchNews();
   }, [props]);
 
   return (

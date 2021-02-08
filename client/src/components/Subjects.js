@@ -10,7 +10,6 @@ function Subjects (props) {
 
     for (let i = 0; i < props.data.length; i++) {
       if (flags[props.data[i].type] || !props.data[i].type) {
-        console.log('this works')
         continue;
       }
 

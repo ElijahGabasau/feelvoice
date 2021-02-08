@@ -1,8 +1,9 @@
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 import figures from '../img/news-figures.svg';
 
-function MainNews() {
+function MainNews(props) {
   return (
     <section className="main-news u-margin-top-lg">
       <h3 className="heading-3 main-news__heading">Новости Студии</h3>
@@ -14,8 +15,8 @@ function MainNews() {
           </svg>
         </div>
         <div className="main-news-piece__content main-news-piece__content--1">
-          <h4 className="heading-4 heading-4--dark heading-4--bold">Квартирник Feelvoice</h4>
-          <p className="paragraph paragraph--dark">1 октября студия FEELVOICE провела свой второй квартирник!  И вот мы, наконец, можем предоставить вам фотоотчёт, чтобы вы сами могли убедиться, насколько здорово это было!!! Безумно приятно видеть, как шаг за шагом наши ученики идут к своей мечте! Огромное спасибо всем, кто разделил с нами этот день!</p>
+          <h4 className="heading-4 heading-4--dark heading-4--bold">{props.news[0] && props.news[0].title}</h4>
+          <p className="paragraph paragraph--dark">{props.news[0] && props.news[0].text}</p>
           <Link to="/news#1" className="btn-cta btn-cta--dark">Посмотреть всё</Link>
         </div>
       </div>
@@ -27,8 +28,8 @@ function MainNews() {
           </svg>
         </div>
         <div className="main-news-piece__content main-news-piece__content--2">
-          <h4 className="heading-4 heading-4--bold">Интенсив Feelvoice</h4>
-          <p className="paragraph paragraph">Недавно у нас прошел вокальный интенсив. Огромное спасибо всем за участие! Надеемся, Вы получили для себя ценную и полезную информацию! Мы бесконечно рады видеть многих из Вас в рядах наших учеников! Вместе с музыкой мы сделаем этот мир лучше!<br /><br />P.S. Совсем скоро анонсируем следующий вокальный интенсив!</p>
+          <h4 className="heading-4 heading-4--bold">{props.news[1] && props.news[1].title}</h4>
+          <p className="paragraph paragraph">{props.news[1] && props.news[1].text}</p>
           <Link to="/news#2" className="btn-cta btn-cta--light">Посмотреть всё</Link>
         </div>
       </div>
@@ -38,4 +39,10 @@ function MainNews() {
   )
 }
 
-export default MainNews;
+const mapStateToProps = (state) => {
+  return {
+    news: Object.values(state.news)
+  };
+}
+
+export default connect(mapStateToProps)(MainNews);
