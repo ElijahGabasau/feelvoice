@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
 import { fetchTeachers, fetchClasses, fetchNews, fetchPinned, fetchTickets, fetchUser, loginUser, logoutUser } from '../actions';
 
 import DataTeachers from '../components/DataTeachers';
@@ -9,6 +10,9 @@ import DataNews from '../components/DataNews';
 import DataPinned from '../components/DataPinned';
 import DataTickets from '../components/DataTickets';
 import Footer from '../components/Footer';
+import Scroll from '../components/Scroll';
+
+import { pageVariants, pageTransition } from './transitionProp';
 
 function Admin(props) {
   const { register, handleSubmit, errors } = useForm();
@@ -58,7 +62,14 @@ function Admin(props) {
   }
 
   return (
-    <div >
+    <motion.div 
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={ pageVariants }
+      transition={ pageTransition }
+    >
+      <Scroll />
       <div className="data-header u-margin-top-sm u-margin-bottom-md-2">
         <h1 className="heading-1">Панель администратора</h1>
         {props.auth && <button className="data__btn" type="button" onMouseDown={()=>props.logoutUser()} >Выйти</button>}
@@ -67,7 +78,7 @@ function Admin(props) {
       { renderContent() }
 
       <Footer />
-    </div>
+    </motion.div>
   )
 }
 

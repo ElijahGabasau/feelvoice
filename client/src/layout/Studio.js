@@ -9,6 +9,8 @@ import ArrowParagraph from '../components/ArrowParagraph';
 import ReversedArrowParagraph from '../components/ReversedArrowParagraph';
 import CtaForm from '../components/CtaForm';
 import Rooms from '../components/Rooms';
+import Scroll from '../components/Scroll';
+
 
 function Studio() {
   return(
@@ -19,6 +21,7 @@ function Studio() {
       variants={pageVariants}
       transition={pageTransition}
     >
+      <Scroll />
       <Stripes noTab />
       <Navbar navigation="Наша Студия" />
       <ArrowTitle className="u-margin-top-md">Экскурсия по нашей школе</ArrowTitle>

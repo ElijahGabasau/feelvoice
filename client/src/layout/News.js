@@ -11,6 +11,7 @@ import Navbar from '../components/Navbar';
 import ArrowTitle from '../components/ArrowTitle';
 import Articles from '../components/Articles';
 import PinnedArticles from '../components/PinnedArticles';
+import Scroll from '../components/Scroll';
 
 function News(props) {
   useEffect(()=>{
@@ -26,6 +27,7 @@ function News(props) {
       variants={pageVariants}
       transition={pageTransition}
     >
+      <Scroll />
       <Stripes noTab />
       <Navbar navigation="Интересности" />
       <ArrowTitle className="u-margin-top-md">Новости и Акции</ArrowTitle>

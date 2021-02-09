@@ -22,11 +22,11 @@ import News from './layout/News';
 import Studio from './layout/Studio';
 
 function App() {
-  const [isLoaded, setLoaded] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     window.addEventListener('load', () => {
-      setLoaded(true);
+      setLoading(false);
     })
   });
 
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="container">
         <AnimatePresence exitBeforeEnter>
-          {!isLoaded && <Loader />}
+          {isLoading && <Loader />}
           <Switch location={location} key={location.pathname}>
             <Route path="/" exact component={ Main } />
             <Route path="/navigation" exact component={ Menu } />
@@ -47,7 +47,7 @@ function App() {
             <Route path="/studio" exact component={ Studio } />
             <Route path="/news" exact component={ News } />
             <Route path="/admin" exact component={ Admin } />
-            <Route component={NotFound} />
+            <Route component={ NotFound } />
           </Switch>
         </AnimatePresence>
     </div>

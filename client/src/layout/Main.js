@@ -17,6 +17,7 @@ import MainNews from '../components/MainNews';
 import Navbar from '../components/Navbar';
 import MainPrising from '../components/MainPrising';
 import TeacherFigures from '../components/TeacherFigures';
+import Scroll from '../components/Scroll';
 
 function Main(props) {
   useEffect(() => {
@@ -33,6 +34,7 @@ function Main(props) {
       variants={ pageVariants }
       transition={ pageTransition }
       >
+      <Scroll />
       <Stripes />
       <Navbar />
       <MainHeader />

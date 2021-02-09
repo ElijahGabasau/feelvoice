@@ -7,7 +7,7 @@ function Subject(props) {
   }
 
   return (
-    <div className={`subject subject--${props.position}`}>
+    <div id={props.id} className={`subject subject--${props.position}`}>
       <div className="subject__hero u-noised-container">
         <img className="subject__image u-noised-image" src={props.image} alt={`${props.title} class`} />
       </div>

@@ -12,6 +12,7 @@ import Stripes from '../components/Stripes';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import PrisingHeader from '../components/PrisingHeader';
+import Scroll from '../components/Scroll';
 
 function Prising(props) {
   useEffect(()=>{
@@ -26,6 +27,7 @@ function Prising(props) {
       variants={pageVariants}
       transition={pageTransition}
       >
+      <Scroll />
       <Stripes />
       <Navbar navigation="Тарифы" />
       <PrisingHeader />

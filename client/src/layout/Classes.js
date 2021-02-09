@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import Stripes from '../components/Stripes';
 import CtaForm from '../components/CtaForm';
 import ArrowTitle from '../components/ArrowTitle';
+import Scroll from '../components/Scroll';
 
 function Classes(props) {
   useEffect(()=>{
@@ -27,6 +28,7 @@ function Classes(props) {
 
       className="classes"
     >
+      <Scroll />
       <Stripes noTab />
       <Navbar navigation="Направления" />
       <ArrowTitle className="u-margin-top-md" >Направления обучения</ArrowTitle>

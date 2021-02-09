@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
+  //deletes the imagies specified in a given array or a string
   toDelete(object, path){
     if(!object) {
       return;

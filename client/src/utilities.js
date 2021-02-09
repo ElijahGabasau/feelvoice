@@ -12,6 +12,7 @@ export const toggleUniqInArray = (element, array) => {
   return newArray; 
 }
 
+//submits form to server
 export const submitContact = async (value) => {
   const response = await fetch('/api/contact', {
     method: 'POST',
