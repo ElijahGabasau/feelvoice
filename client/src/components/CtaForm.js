@@ -16,7 +16,7 @@ function CtaForm(props) {
       </div>
       <form 
         className="cta-form__form"
-        onSubmit={handleSubmit(value => submitContact(value))}
+        onSubmit={handleSubmit(value => submitContact(value, -1))}
       >
         <input 
           ref={ register({ required: true }) } 

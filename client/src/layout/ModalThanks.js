@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
 import { modalVariants, modalTransition } from './transitionProp';
+import { withRouter } from "react-router";
 
 import GoBackCross from '../components/GoBackCross';
 
-function ModalThanks() {
+function ModalThanks(props) {
+
+  let depth = -1;
+
+  if(props.history.location.state){
+    depth = props.history.location.state.depth || -1;
+  }
+
+
   return (
     <motion.div 
       initial="out"
@@ -13,7 +22,7 @@ function ModalThanks() {
       transition={modalTransition}
       >
         <div className="modal modal--thanks">
-          <GoBackCross depth={-2} className="modal__figure" />
+          <GoBackCross depth={depth} className="modal__figure" />
           <img className="modal__image" src={require('../img/logo-solid.png').default} alt="feelvoice logo"/>
           <h1 className="modal__heading">Спасибо за вашу заявку!</h1>
           <p className="modal__text paragraph">Наш менеджер свяжется с вами уже очень скоро.</p>
@@ -22,4 +31,4 @@ function ModalThanks() {
   )
 }
 
-export default ModalThanks;
+export default withRouter( ModalThanks);

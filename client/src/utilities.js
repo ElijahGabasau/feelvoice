@@ -13,7 +13,7 @@ export const toggleUniqInArray = (element, array) => {
 }
 
 //submits form to server
-export const submitContact = async (value) => {
+export const submitContact = async (value, depth) => {
   const response = await fetch('/api/contact', {
     method: 'POST',
     body: JSON.stringify(value) || null,
@@ -26,5 +26,5 @@ export const submitContact = async (value) => {
     return console.log('something went wrong');
   }
 
-  history.push('/thanks');
+  history.push('/thanks', { depth: depth || -2 });
 }
