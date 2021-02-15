@@ -2,7 +2,7 @@ import Room from './Room';
 
 const elements = [
   {
-    title: 'Кабинет вокала',
+    title: 'Вариант кабинета №1',
     data: [
       {
         title: 'Фортепиано',
@@ -52,7 +52,7 @@ const elements = [
     ]
   },
   {
-    title: 'Кабинет экстрим-вокала',
+    title: 'Вариант кабинета №2',
     data: [
       {
         title: 'Микрофон',
