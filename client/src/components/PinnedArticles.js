@@ -12,7 +12,7 @@ function PinnedArticles(props) {
   }
   
   return (
-    <section className="pinned-articles">
+    <section className={`pinned-articles ${props.className}`}>
       { render }
     </section>
   ) 
