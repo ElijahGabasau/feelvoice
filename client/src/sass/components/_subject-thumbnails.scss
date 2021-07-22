@@ -2,14 +2,14 @@
   position: relative;
   display: grid;
   grid-template-columns: 2.4rem 1fr 2.4rem;
-  grid-template-areas: 
-    ". heading ."
-    ". subject-1 ."
-    ". subject-2 ."
-    ". subject-3 ."
-    ". subject-4 ."
-    ". subject-5 ."
-    ". subject-6 .";
+  grid-template-areas:
+    '. heading .'
+    '. subject-1 .'
+    '. subject-2 .'
+    '. subject-3 .'
+    '. subject-4 .'
+    '. subject-5 .'
+    '. subject-6 .';
   row-gap: 4rem;
 
   justify-items: center;
@@ -17,30 +17,30 @@
   @include respond(tab-port) {
     grid-row: auto;
     grid-template-columns: 1rem repeat(2, 1fr) 1rem;
-    grid-template-areas: 
-      ". heading heading ."
-      ". subject-1 . ."
-      ". subject-1 subject-2 ."
-      ". subject-1 subject-2 ."
-      ". subject-1 subject-2 ."
-            ". . subject-2 ."
-      ". subject-3 . ."
-      ". subject-3 subject-4 ."
-      ". subject-3 subject-4 ."
-      ". subject-3 subject-4 ."
-            ". . subject-4 ."
-      ". subject-5 . ."
-      ". subject-5 subject-6 ."
-      ". subject-5 subject-6 ."
-      ". subject-5 subject-6 ."
-            ". . subject-6 ."
-          ". btn btn .";
+    grid-template-areas:
+      '. heading heading .'
+      '. subject-1 . .'
+      '. subject-1 subject-2 .'
+      '. subject-1 subject-2 .'
+      '. subject-1 subject-2 .'
+      '. . subject-2 .'
+      '. subject-3 . .'
+      '. subject-3 subject-4 .'
+      '. subject-3 subject-4 .'
+      '. subject-3 subject-4 .'
+      '. . subject-4 .'
+      '. subject-5 . .'
+      '. subject-5 subject-6 .'
+      '. subject-5 subject-6 .'
+      '. subject-5 subject-6 .'
+      '. . subject-6 .'
+      '. btn btn .';
     row-gap: 3.5rem;
     column-gap: 3rem;
   }
 
   @media only screen and (min-width: 42.5em) {
-    column-gap: 5rem; 
+    column-gap: 5rem;
   }
 
   @include respond(tab-land) {
@@ -50,27 +50,27 @@
 
   @include respond(desktop) {
     grid-template-columns: 1fr repeat(3, 38rem) 1fr;
-    grid-template-areas: 
-      ". heading . . ."
-      ". . . . ."
-      ". . . . ."
-            ". . subject-2 . ."
-            ". . subject-2 . ."
-      ". subject-1 subject-2 . ."
-      ". subject-1 subject-2 . ."
-      ". subject-1 subject-2 subject-3 ."
-      ". subject-1    .    subject-3 ."
-      ". subject-1    .    subject-3 ."
-            ". . subject-5 subject-3 ."
-            ". . subject-5 subject-3 ."
-            ". . subject-5 . ."
-      ". subject-4 subject-5 . ."
-      ". subject-4 subject-5 subject-6 ."
-      ". subject-4    .    subject-6 ."
-      ". subject-4    .    subject-6 ."
-      ". subject-4    .    subject-6 ."
-                  ". . . subject-6 ."
-              ". . btn . .";
+    grid-template-areas:
+      '. heading . . .'
+      '. . . . .'
+      '. . . . .'
+      '. . subject-2 . .'
+      '. . subject-2 . .'
+      '. subject-1 subject-2 . .'
+      '. subject-1 subject-2 . .'
+      '. subject-1 subject-2 subject-3 .'
+      '. subject-1    .    subject-3 .'
+      '. subject-1    .    subject-3 .'
+      '. . subject-5 subject-3 .'
+      '. . subject-5 subject-3 .'
+      '. . subject-5 . .'
+      '. subject-4 subject-5 . .'
+      '. subject-4 subject-5 subject-6 .'
+      '. subject-4    .    subject-6 .'
+      '. subject-4    .    subject-6 .'
+      '. subject-4    .    subject-6 .'
+      '. . . subject-6 .'
+      '. . btn . .';
     column-gap: 0;
     row-gap: 4.5rem;
   }
@@ -98,7 +98,7 @@
     width: 65rem;
     height: 65rem;
 
-    transform: translateX(-58%); 
+    transform: translateX(-58%);
 
     @include respond(tab-port) {
       width: 80rem;
@@ -131,7 +131,7 @@
 .subject-thumbnail {
   position: relative;
 
-  &__image{
+  &__image {
     height: 30rem;
     width: 30rem;
 
@@ -142,7 +142,7 @@
       width: 26rem;
     }
 
-    @media only screen and (min-width: 46.75em){
+    @media only screen and (min-width: 46.75em) {
       height: 30rem;
       width: 30rem;
     }
@@ -178,17 +178,23 @@
 
   &__icon {
     width: 3.75rem;
-    height: .5rem;
+    height: 0.5rem;
 
-    transition: transform .5s ease; 
+    transition: transform 0.5s ease;
   }
 
   &__btn {
     font-size: 1.6rem;
     margin-top: 1rem;
+    max-width: 30rem;
+
+    @include respond(tab-port) {
+      max-width: 26rem;
+    }
 
     @include respond(tab-land) {
       font-size: 2rem;
+      max-width: 30rem;
     }
 
     &:hover .subject-thumbnail__icon {
@@ -196,7 +202,7 @@
     }
 
     &:active .subject-thumbnail__icon {
-      transform: translateX(-.5rem);
+      transform: translateX(-0.5rem);
     }
   }
 
