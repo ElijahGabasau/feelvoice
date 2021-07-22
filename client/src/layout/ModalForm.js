@@ -55,7 +55,7 @@ function ModalForm() {
             />
           </div>
           <div className="modal__form-piece modal__form-piece--4">
-            <label className="modal__label" htmlFor="text">Ваши пожелания</label>
+            <label className="modal__label" htmlFor="text">Желаемое направление</label>
             <input ref={register()} className="modal__input" type="text" name="text" />
           </div>
           <Button type="3" className="btn--dark modal__btn" action="submit">Отправить</Button>

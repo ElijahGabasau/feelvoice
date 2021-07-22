@@ -43,7 +43,7 @@ function CtaForm(props) {
           ref={ register } 
           name="text" 
           type="text" 
-          placeholder="Ваши пожелания" 
+          placeholder="Желаемое направление" 
           className={`cta-form__input ${errors.text? 'cta-form__input--error' : ''}`} 
         />
 

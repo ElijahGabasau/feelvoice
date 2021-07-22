@@ -3,7 +3,7 @@ function MenuFooter() {
     <footer className="footer footer--menu">
       <div className="footer__item">
         <h5 className="heading-5">Mail.</h5>
-        <p className="paragraph" >info@feelvoice.by</p>
+        <p className="paragraph" >feelvoiceltd@gmail.com</p>
         <svg className="footer__arrow">
           <use href={`${require("../img/icons.svg").default}#running-arrow-sm`} />
         </svg>
@@ -17,7 +17,7 @@ function MenuFooter() {
       </div>
       <div className="footer__item">
         <h5 className="heading-5">Tel.</h5>
-        <p className="paragraph" >+375 (4473) 7-52-00</p>
+        <p className="paragraph" >+375 (44) 737-52-00</p>
         <svg className="footer__arrow">
           <use href={`${require("../img/icons.svg").default}#running-arrow-sm`} />
         </svg>
