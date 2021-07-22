@@ -33,7 +33,7 @@ app.use(passport.session());
 app.use('/api/resources', express.static(__dirname + '/img'));
 
 
-require('./routes/materialsRoutes')(app);
+// require('./routes/materialsRoutes')(app);
 require('./routes/teachersRoutes')(app);
 require('./routes/classesRoutes')(app);
 require('./routes/newsRoutes')(app);
