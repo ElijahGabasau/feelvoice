@@ -1,8 +1,27 @@
 import Button from './Button';
 import Tariff from './Tariff';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function MainPrising() {
+function MainPrising(props) {
+  const items = props.data.reduce((acc, cur) =>{
+    if (acc.length === 6) return acc;
+
+    if (acc.length < 3 && cur.type !== "personal") return acc; 
+    
+    if (acc.length >= 3 && cur.type === "personal") return acc;
+    
+    return [...acc, (
+      <div key={cur.title + acc.length} className="flex-table__item">
+        {cur.type === "group"
+         ? <div className="flex-table__text">{cur.title} {cur.amount}</div>
+         : <div className="flex-table__text">{cur.title} ({cur.amount})</div>
+        }
+        <div className="flex-table__price">{cur.price} BYN</div>
+      </div>  
+    )]
+  }, []);
+
   return (
     <section className="main-prising">
       <div className="main-prising__hero">
@@ -25,35 +44,7 @@ function MainPrising() {
           <div>Бесплатно</div>
         </div>
 
-        <div className="flex-table__item">
-          <div>Индивидуальный (1 Занятие)</div>
-          <div>28 BYN</div>
-        </div>
-
-        <div className="flex-table__item">
-          <div>Индивидуальный (4 Занятия)</div>
-          <div>95 BYN</div>
-        </div>
-
-        <div className="flex-table__item">
-          <div>Индивидуальный (8 Занятий)</div>
-          <div>185 BYN</div>
-        </div>
-
-        <div className="flex-table__item">
-          <div>Групповой (1 занятие)</div>
-          <div>18 BYN/ЧЕЛ</div>
-        </div>
-
-        <div className="flex-table__item">
-          <div>Групповой (4 занятия)</div>
-          <div>60 BYN/ЧЕЛ</div>
-        </div>
-
-        <div className="flex-table__item">
-          <div>Групповой (8 занятий)</div>
-          <div>110 BYN/ЧЕЛ</div>
-        </div>
+        {items}
       </Link>
 
       <Button type="1" className="main-prising__btn u-margin-top-sm" to="/prising">Все абонементы</Button>
@@ -61,4 +52,11 @@ function MainPrising() {
   )
 }
 
-export default MainPrising;
+
+const mapStateToProps = (state) => {
+  return { 
+    data: Object.values(state.tickets),
+  };
+}
+
+export default connect(mapStateToProps)(MainPrising);

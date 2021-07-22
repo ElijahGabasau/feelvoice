@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchTeachers, fetchClasses, fetchNews } from '../actions';
+import { fetchTeachers, fetchClasses, fetchNews, fetchTickets } from '../actions';
 
 import About from '../components/About';
 import AnimatedArrow from '../components/AnimatedArrow';
@@ -24,6 +24,7 @@ function Main(props) {
     props.fetchTeachers();
     props.fetchClasses();
     props.fetchNews();
+    props.fetchTickets();
   }, [props]);
 
   return (
@@ -51,4 +52,4 @@ function Main(props) {
   )
 }
 
-export default connect(null, { fetchTeachers, fetchClasses, fetchNews })(Main);
+export default connect(null, { fetchTeachers, fetchClasses, fetchNews, fetchTickets })(Main);

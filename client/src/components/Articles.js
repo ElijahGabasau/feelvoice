@@ -4,7 +4,7 @@ import Article from './Article';
 function Articles(props) {
   const render = [];
 
-  for (let i = 0; i < props.news.length; i++) {
+  for (let i = props.news.length - 1; i >= 0; i--) {
     render.push(
       <Article key={`article${i}`} order={i % 4 + 1} data={props.news[i]} />
     ) 

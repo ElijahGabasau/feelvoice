@@ -18,7 +18,7 @@ function EditImage(props) {
       <div key={`${props.id}-${i}-news-image`}>
         <figure className="u-flex-column " >
           <label className="paragraph u-bold">{props.children} {i + 1}:</label>
-          <img className="data__image" src={props.image[i]} alt="admin visualisation" />
+          <img className="data__image" src={props.image[i]} alt="visualisation" />
         </figure>
         <input name={`${props.name}-${i}`} className="data__input data__input--file" type="file" ref={props.register}/>
       </div>

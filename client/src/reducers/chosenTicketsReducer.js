@@ -6,6 +6,8 @@ const reducer = (state = 'all', action) => {
       return action.payload;
     case 'GROUP_TICKETS':
       return action.payload;
+    case 'TOP_TICKETS':
+      return action.payload;
     default:
       return state;
   }

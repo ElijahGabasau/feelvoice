@@ -9,35 +9,35 @@
     margin-top: 30rem;
     grid-template-columns: 2.4rem repeat(3, 1fr) 2.4rem;
     grid-template-areas:
-      ". heading heading hero ." 
-      ". text text hero ."
-      ". . . hero ."
-      ". table table hero ."
-      ". . . . ."
-      ". btn . . .";
+      '. heading heading hero .'
+      '. text text hero .'
+      '. . . hero .'
+      '. table table hero .'
+      '. . . . .'
+      '. btn . . .';
     justify-items: start;
   }
 
   @include respond(tab-land) {
     grid-template-columns: 1fr minmax(28rem, 1fr) 30rem repeat(2, 1fr);
     grid-template-areas:
-      ". heading heading . hero" 
-      ". text text . hero"
-      ". . . . hero"
-      ". table table . hero"
-      ". . . . ."
-      ". btn . . .";
+      '. heading heading . hero'
+      '. text text . hero'
+      '. . . . hero'
+      '. table table . hero'
+      '. . . . .'
+      '. btn . . .';
   }
 
   @include respond(desktop) {
     grid-template-columns: 1fr repeat(3, 38rem) 1fr;
     grid-template-areas:
-      ". heading heading hero ." 
-      ". text text hero ."
-      ". . . hero ."
-      ". table table hero ."
-      ". . . . ."
-      ". btn . . .";
+      '. heading heading hero .'
+      '. text text hero .'
+      '. . . hero .'
+      '. table table hero .'
+      '. . . . .'
+      '. btn . . .';
   }
 
   * {
@@ -127,6 +127,15 @@
 
   @include respond(tab-port) {
     grid-area: table / table;
+  }
+
+  &__text {
+    text-align: left;
+  }
+
+  &__price {
+    text-align: right;
+    min-width: 6rem;
   }
 
   &__item {

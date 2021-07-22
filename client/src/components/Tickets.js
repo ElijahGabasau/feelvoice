@@ -18,6 +18,9 @@ class Tickets extends React.Component {
       } else if (this.props.chosenTickets === 'group' && data[i].type !== 'group'){
         position--;
         continue;
+      } else if (this.props.chosenTickets === 'top' && data[i].type !== 'top'){
+        position--;
+        continue;
       }
 
       if (this.props.chosenTickets !== 'all' && i === 9 && position % 2 === 0) {

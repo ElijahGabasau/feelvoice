@@ -1,48 +1,51 @@
 .main-news {
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, max-content) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, max-content) minmax(
+      1rem,
+      1fr
+    );
   grid-template-areas:
-  ". heading ."
-  ". news1 ."
-  ". news2 ."
-  " . btn .";
+    '. heading .'
+    '. news1 .'
+    '. news2 .'
+    ' . btn .';
   justify-items: center;
   row-gap: 4rem;
 
   @include respond(tab-port) {
-    grid-template-columns:  1fr repeat(2, minmax(min-content, max-content)) 1fr;
-    grid-template-areas: 
-      ". heading heading ."
-      ". news1 . ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-          ". . news2 ."
-      ". btn btn .";
+    grid-template-columns: 1fr repeat(2, minmax(min-content, max-content)) 1fr;
+    grid-template-areas:
+      '. heading heading .'
+      '. news1 . .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. . news2 .'
+      '. btn btn .';
     column-gap: 2.4rem;
     row-gap: 6rem;
   }
 
   @media only screen and (min-width: 50em) {
-    column-gap: 5rem; 
+    column-gap: 5rem;
   }
 
   @include respond(desktop) {
     column-gap: 3rem;
-    grid-template-areas: 
-      ". . heading ."
-      ". news1 heading ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-      ". news1 news2 ."
-          ". . news2 ."
-      ". btn btn .";
+    grid-template-areas:
+      '. . heading .'
+      '. news1 heading .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. news1 news2 .'
+      '. . news2 .'
+      '. btn btn .';
   }
 
   &__heading {
@@ -54,12 +57,11 @@
     display: block;
     transform: translateX(1.6rem);
 
-
     &:after {
-      content: "Новости Студии";
+      content: 'Новости Студии';
       color: $color-secondary;
       position: absolute;
-      top: .7rem;
+      top: 0.7rem;
       left: -3.2rem;
 
       display: block;
@@ -104,14 +106,14 @@
     grid-area: news2 / news2;
   }
 
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
   &__hero {
     position: relative;
     padding: 4.5rem;
-    min-height: 30rem;
-
-    @include respond(desktop) {
-      min-height: 37rem;
-    }
 
     &--1 {
       background-color: $color-tertiary;

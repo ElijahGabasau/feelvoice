@@ -54,6 +54,12 @@ export const switchTickets = (type) => {
         payload: 'group'
       }
     }
+    case 'top': {
+      return {
+        type: 'TOP_TICKETS',
+        payload: 'top'
+      }
+    }
     default: return;
   }
 }
